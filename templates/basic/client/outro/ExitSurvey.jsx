@@ -78,6 +78,7 @@ export default class ExitSurvey extends React.Component {
                     name="gender"
                     value={gender}
                     onChange={this.handleChange}
+                    autoComplete="off"
                   />
                 </div>
               </div>

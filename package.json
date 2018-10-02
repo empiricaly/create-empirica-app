@@ -1,6 +1,6 @@
 {
   "name": "create-empirica-app",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Create Empirica apps easily.",
   "keywords": [
     "empirica",
@@ -16,7 +16,8 @@
   "license": "MIT",
   "files": [
     "index.js",
-    "createEmpiricaApp.js"
+    "createEmpiricaApp.js",
+    "templates"
   ],
   "bin": {
     "create-empirica-app": "./index.js"

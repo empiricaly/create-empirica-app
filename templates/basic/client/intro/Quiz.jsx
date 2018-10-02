@@ -38,6 +38,7 @@ export default class Quiz extends React.Component {
                 placeholder="e.g. 3"
                 value={sum}
                 onChange={this.handleChange}
+                autoComplete="off"
                 required
               />
             </p>
@@ -53,6 +54,7 @@ export default class Quiz extends React.Component {
                 placeholder="e.g. brown"
                 value={horse}
                 onChange={this.handleChange}
+                autoComplete="off"
                 required
               />
             </p>

@@ -149,9 +149,17 @@ function createApp(name, verbose, useNpm, template = "basic") {
     appName: inflection.titleize(name)
   };
 
-  copyTemplate(root, appName, verbose, templatePath, config);
-  initNpm(root, verbose);
-  finished(root, appName, verbose);
+  copyTemplate(root, appName, verbose, templatePath, config)
+    .then(() => {
+      initNpm(root, verbose);
+      finished(root, appName, verbose);
+    })
+    .catch(err => {
+      console.log(err);
+      console.log(chalk.red(`\n\Failed to setup meteor template!\n\n`));
+
+      process.exit(1);
+    });
 }
 
 function finished(root, appName, verbose) {
@@ -177,8 +185,11 @@ function initNpm(root, verbose) {
     console.log(`Pulling NPM dependencies.`);
     console.log();
 
-    execSync(`cd ${root} && meteor npm install`, {
-      stdio: "inherit"
+    // process.chdir(root);
+    // console.log("New directory: " + process.cwd());
+    execSync(`meteor npm install`, {
+      stdio: "inherit",
+      cwd: root
     });
   } catch (e) {
     console.log(chalk.red(`\n\nCould not pull NPM dependencies\n\n`));
@@ -187,54 +198,47 @@ function initNpm(root, verbose) {
 }
 
 function copyTemplate(root, appName, verbose, templatePath, config) {
-  try {
-    console.log(`Setting up App template.`);
-    console.log();
+  console.log(`Setting up App template.`);
+  console.log();
 
-    return new Promise((resolve, reject) => {
-      metalsmith(__dirname)
-        .source(templatePath)
-        .destination(root)
-        .metadata(config)
-        // .use(ignore([".template.js"]))
-        .use(
-          // Add the `.hbs` extension to any templating files that need
-          // their placeholders to get filled with `metalsmith-in-place`
-          rename([
-            // `npx` renames `.gitignore` files to `.npmignore`
-            // See https://github.com/algolia/create-instantsearch-app/issues/48
-            [".gitignore.template", ".gitignore"],
-            [/\.md$/, ".md.hbs"],
-            [/\.json$/, ".json.hbs"],
-            // For the web
-            [/\.webmanifest$/, ".webmanifest.hbs"],
-            [/\.html$/, ".html.hbs"],
-            [/\.css$/, ".css.hbs"],
-            [/\.js$/, ".js.hbs"],
-            [/\.jsx$/, ".jsx.hbs"],
-            [/\.ts$/, ".ts.hbs"],
-            // Use `.babelrc.template` as name to not trigger babel
-            // when requiring the file `.template.js` in end-to-end tests
-            // and rename it `.babelrc` afterwards
-            [".babelrc.template", ".babelrc"],
-            [".eslintrc.js.hbs", ".eslintrc.js"]
-          ])
-        )
-        .use(inPlace())
-        .build(err => {
-          if (err) {
-            reject(err);
-          }
+  return new Promise((resolve, reject) => {
+    metalsmith(__dirname)
+      .source(templatePath)
+      .destination(root)
+      .metadata(config)
+      // .use(ignore([".template.js"]))
+      .use(
+        // Add the `.hbs` extension to any templating files that need
+        // their placeholders to get filled with `metalsmith-in-place`
+        rename([
+          // `npx` renames `.gitignore` files to `.npmignore`
+          // See https://github.com/algolia/create-instantsearch-app/issues/48
+          [".gitignore.template", ".gitignore"],
+          [/\.md$/, ".md.hbs"],
+          [/\.json$/, ".json.hbs"],
+          // For the web
+          [/\.webmanifest$/, ".webmanifest.hbs"],
+          [/\.html$/, ".html.hbs"],
+          [/\.css$/, ".css.hbs"],
+          [/\.js$/, ".js.hbs"],
+          [/\.jsx$/, ".jsx.hbs"],
+          [/\.ts$/, ".ts.hbs"],
+          // Use `.babelrc.template` as name to not trigger babel
+          // when requiring the file `.template.js` in end-to-end tests
+          // and rename it `.babelrc` afterwards
+          [".babelrc.template", ".babelrc"],
+          [".eslintrc.js.hbs", ".eslintrc.js"]
+        ])
+      )
+      .use(inPlace())
+      .build(err => {
+        if (err) {
+          reject(err);
+        }
 
-          resolve();
-        });
-    });
-  } catch (e) {
-    console.log(e);
-    console.log(chalk.red(`\n\Failed to setup meteor template!\n\n`));
-
-    process.exit(1);
-  }
+        resolve();
+      });
+  });
 }
 
 function installMeteor() {
