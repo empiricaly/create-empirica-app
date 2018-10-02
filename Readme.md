@@ -4,45 +4,33 @@ The easy way to create an Empirica app.
 
 ## Quick Start
 
+You’ll need to have Node.js >= 8 on your local development machine. See
+[Usage](#usage) bellow if you don't have it installed.
+
 ```sh
 npx create-empirica-app my-experiment
 cd my-experiment
 meteor
 ```
 
-Then open [http://localhost:3000/](http://localhost:3000/) to see your experiment.
+Then open http://localhost:3000/ to see your experiment.
 
-## Creating an App (more details)
+## Usage
 
-You’ll need to have Node >= 8 on your local development machine.<br>
-To create a new app, you may choose one of the following methods:
+`create-empirica-app` requires Node.js >= 8. If you don't already have
+Node.js 8+ setup, we recommend you use the official installer:
+https://nodejs.org/en/download/.
 
-### npx
+Then you can simply run the following command, where `my-experiment` is the name
+of the experiment you wish to create:
 
 ```sh
 npx create-empirica-app my-experiment
 ```
 
-_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
-
-### npm
-
-```sh
-npm init empirica-app my-experiment
-```
-
-_`npm init <initializer>` is available in npm 6+_
-
-### Yarn
-
-```sh
-yarn create empirica-app my-experiment
-```
-
-_`yarn create` is available in Yarn 0.25+_
-
 It will create a directory called `my-experiment` inside the current folder.<br>
-Inside that directory, it will generate the initial project structure and install the transitive dependencies:
+Inside that directory, it will generate the initial project structure and
+install the transitive dependencies:
 
 ```
 my-experiment
@@ -50,29 +38,52 @@ my-experiment
 ├── README.md
 ├── node_modules
 ├── package.json
+├── package-lock.json
 ├── .gitignore
 ├── public
 ├── client
-│   ├── client.html
-│   ├── client.css
-│   └── client.js
+│   ├── main.html
+│   ├── main.js
+│   ├── main.css
+│   ├── game
+│   │   ├── Round.jsx
+│   │   ├── PlayerProfile.jsx
+│   │   ├── SocialExposure.jsx
+│   │   ├── Task.jsx
+│   │   ├── TaskResponse.jsx
+│   │   ├── TaskStimulus.jsx
+│   │   └── Timer.jsx
+│   ├── intro
+│   │   ├── Consent.jsx
+│   │   ├── InstructionStepOne.jsx
+│   │   ├── InstructionStepTwo.jsx
+│   │   └── Quiz.jsx
+│   └── outro
+│       ├── ExitSurvey.jsx
+│       └── Thanks.jsx
 └── server
-    └── server.js
+    ├── main.js
+    ├── callbacks.js
+    └── bots.js
 ```
 
-No configuration or complicated folder structures, just the files you need to build your app.  
+No configuration or complicated folder structures, just the files you need to
+build your app.  
 Once the installation is done, you can open your project folder:
 
 ```sh
 cd my-experiment
 ```
 
-Inside the newly created project, you can run the standard `meteor` command to start you app locally:
+Inside the newly created project, you can run the standard `meteor` command to
+start you app locally:
 
-### `meteor`
+```sh
+meteor
+```
 
-Runs the app in development mode.<br>
+`meteor` runs the app in development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will automatically reload if you make changes to the code.<br>
-You will see the build errors and lint warnings in the console.
+You will see the build errors in the console.
