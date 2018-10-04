@@ -2,8 +2,7 @@
 Open source project to tackle the problem of long development cycles required to produce software to conduct multi-participant and real-time human experiments online.
 
 ## We are in Beta
-This is a REAL beta - this means that you will be using a version of Empirica that is not yet ready for public release and still lacks proper documentation and examples. You should be prepared to find things which don't work perfectly, so please give us feedback on how to make them better. You can provide us with feedback by sending an email to hello@empirica.ly or by [creating an issue on GitHub](https://github.com/empiricaly/create-empirica-app/issues).
-. The more feedback you give us, the better!
+This is a REAL beta - this means that you will be using a version of Empirica that is not yet ready for public release and still lacks proper documentation and examples. You should be prepared to find things which don't work perfectly, so please give us feedback on how to make them better. You can provide us with feedback by sending an email to hello@empirica.ly or by [creating an issue on GitHub](https://github.com/empiricaly/create-empirica-app/issues). The more feedback you give us, the better!
 
 # create-empirica-app
 
