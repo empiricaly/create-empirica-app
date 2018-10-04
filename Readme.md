@@ -1,3 +1,10 @@
+# Empirica
+Open source project to tackle the problem of long development cycles required to produce software to conduct multi-participant and real-time human experiments online. It handles all the boring logistics and allowing you to get straight to what really interests you, whatever that may be. It was built with the experiment developer in mind. Your time should not be spent in implementing the software and reinventing the wheel every time you try to experiment with your ideas.
+
+## We are in Beta
+This is a REAL beta - this means that you will be using a version of Empirica that is not yet ready for public release and still lacks proper documentation and examples. You should be prepared to find things which don't work perfectly, so please give us feedback on how to make them better. You can provide us with feedback by sending an email to hello@empirica.ly or by [creating an issue on GitHub](https://github.com/empiricaly/create-empirica-app/issues).
+. The more feedback you give us, the better!
+
 # create-empirica-app
 
 The easy way to create an Empirica app.
