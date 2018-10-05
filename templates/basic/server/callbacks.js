@@ -3,23 +3,23 @@ import Empirica from "meteor/empirica:core";
 // onGameStart is triggered opnce per game before the game starts, and before
 // the first onRoundStart. It receives the game and list of all the players in
 // the game.
-Empirica.onGameStart(function(game, players) {});
+Empirica.onGameStart((game, players) => {});
 
 // onRoundStart is triggered before each round starts, and before onStageStart.
 // It receives the same options as onGameStart, and the round that is starting.
-Empirica.onRoundStart(function(game, round, players) {});
+Empirica.onRoundStart((game, round, players) => {});
 
 // onRoundStart is triggered before each stage starts.
 // It receives the same options as onRoundStart, and the stage that is starting.
-Empirica.onStageStart(function(game, round, stage, players) {});
+Empirica.onStageStart((game, round, stage, players) => {});
 
 // onStageEnd is triggered after each stage.
 // It receives the same options as onRoundEnd, and the stage that just ended.
-Empirica.onStageEnd(function(game, round, stage, players) {});
+Empirica.onStageEnd((game, round, stage, players) => {});
 
 // onRoundEnd is triggered after each round.
 // It receives the same options as onGameEnd, and the round that just ended.
-Empirica.onRoundEnd(function(game, round, players) {
+Empirica.onRoundEnd((game, round, players) => {
   players.forEach(player => {
     const value = player.round.get("value") || 0;
     const prevScore = player.get("score") || 0;
@@ -29,7 +29,7 @@ Empirica.onRoundEnd(function(game, round, players) {
 
 // onRoundEnd is triggered when the game ends.
 // It receives the same options as onGameStart.
-Empirica.onGameEnd(function(game, players) {});
+Empirica.onGameEnd((game, players) => {});
 
 // ===========================================================================
 // => onSet, onAppend and onChanged ==========================================
@@ -52,7 +52,7 @@ Empirica.onGameEnd(function(game, players) {});
 
 // // onSet is called when the experiment code call the .set() method
 // // on games, rounds, stages, players, playerRounds or playerStages.
-// Empirica.onSet(function(
+// Empirica.onSet((
 //   game,
 //   round,
 //   stage,
@@ -63,7 +63,7 @@ Empirica.onGameEnd(function(game, players) {});
 //   key, // Key of changed value (e.g. player.set("score", 1) => "score")
 //   value, // New value
 //   prevValue // Previous value
-// ) {
+// ) => {
 //   // // Example filtering
 //   // if (key !== "value") {
 //   //   return;
@@ -72,7 +72,7 @@ Empirica.onGameEnd(function(game, players) {});
 
 // // onSet is called when the experiment code call the `.append()` method
 // // on games, rounds, stages, players, playerRounds or playerStages.
-// Empirica.onAppend(function(
+// Empirica.onAppend((
 //   game,
 //   round,
 //   stage,
@@ -83,7 +83,7 @@ Empirica.onGameEnd(function(game, players) {});
 //   key, // Key of changed value (e.g. player.set("score", 1) => "score")
 //   value, // New value
 //   prevValue // Previous value
-// ) {
+// ) => {
 //   // Note: `value` is the single last value (e.g 0.2), while `prevValue` will
 //   //       be an array of the previsous valued (e.g. [0.3, 0.4, 0.65]).
 // });
@@ -91,7 +91,7 @@ Empirica.onGameEnd(function(game, players) {});
 // // onChange is called when the experiment code call the `.set()` or the
 // // `.append()` method on games, rounds, stages, players, playerRounds or
 // // playerStages.
-// Empirica.onChange(function(
+// Empirica.onChange((
 //   game,
 //   round,
 //   stage,
@@ -103,7 +103,7 @@ Empirica.onGameEnd(function(game, players) {});
 //   value, // New value
 //   prevValue, // Previous value
 //   isAppend // True if the change was an append, false if it was a set
-// ) {
+// ) => {
 //   // `onChange` is useful to run server-side logic for any user interaction.
 //   // Note the extra isAppend boolean that will allow to differenciate sets and
 //   // appends.

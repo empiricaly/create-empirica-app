@@ -1,0 +1,8 @@
+{
+  "admins": [
+    {
+      "username": "admin",
+      "password": "{{adminPassword}}"
+    }
+  ]
+}

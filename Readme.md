@@ -1,4 +1,4 @@
-# create-empirica-app
+# Create Empirica App
 
 The easy way to create an Empirica app.
 
@@ -87,3 +87,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will automatically reload if you make changes to the code.<br>
 You will see the build errors in the console.
+
+## Updating Empirica Core
+
+As new versions of Empirica become available, you might want to update the
+version you are using in your app. To do so, simply run:
+
+```sh
+meteor update empirica:core
+```

@@ -10,7 +10,7 @@ import "./bots.js";
 // and the players. You can also get/set initial values on your game, players,
 // rounds and stages (with get/set methods), that will be able to use later in
 // the game.
-Empirica.gameInit(function(game, treatment, players) {
+Empirica.gameInit((game, treatment, players) => {
   players.forEach((player, i) => {
     player.set("avatar", `/avatars/jdenticon/${player._id}`);
     player.set("score", 0);

@@ -146,7 +146,10 @@ function createApp(name, verbose, useNpm, template = "basic") {
 
   const config = {
     name,
-    appName: inflection.titleize(name)
+    appName: inflection.titleize(name),
+    adminPassword: Math.random()
+      .toString(36)
+      .substring(2, 15)
   };
 
   copyTemplate(root, appName, verbose, templatePath, config)
@@ -206,7 +209,7 @@ function copyTemplate(root, appName, verbose, templatePath, config) {
       .source(templatePath)
       .destination(root)
       .metadata(config)
-      // .use(ignore([".template.js"]))
+      .use(ignore(["**.meteor/local/*", "node_modules/*"]))
       .use(
         // Add the `.hbs` extension to any templating files that need
         // their placeholders to get filled with `metalsmith-in-place`
