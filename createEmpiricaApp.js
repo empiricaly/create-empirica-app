@@ -146,7 +146,7 @@ function createApp(name, verbose, useNpm, template = "basic") {
 
   const config = {
     name,
-    appName: inflection.titleize(name),
+    appName: inflection.titleize(inflection.humanize(name.replace(/-/g, " "))),
     adminPassword: Math.random()
       .toString(36)
       .substring(2, 15)
