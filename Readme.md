@@ -76,7 +76,7 @@ my-experiment
 ```
 
 No configuration or complicated folder structures, just the files you need to
-build your app.  
+build your app.
 Once the installation is done, you can open your project folder:
 
 ```sh
