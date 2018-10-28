@@ -1,5 +1,5 @@
 {
-  "name": "empirica-example",
+  "name": "{{name}}",
   "private": true,
   "scripts": {
     "start": "meteor run"
