@@ -30,8 +30,8 @@ ecmascript-runtime-client@0.8.0
 ecmascript-runtime-server@0.7.1
 ejson@1.1.0
 email@1.2.3
-empirica:core@0.0.9
-empirica:slider@0.0.1
+empirica:core@0.0.10
+empirica:slider@0.0.2
 es5-shim@4.8.0
 fetch@0.1.0
 geojson-utils@1.0.10
