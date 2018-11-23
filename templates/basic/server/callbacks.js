@@ -9,7 +9,7 @@ Empirica.onGameStart((game, players) => {});
 // It receives the same options as onGameStart, and the round that is starting.
 Empirica.onRoundStart((game, round, players) => {});
 
-// onRoundStart is triggered before each stage starts.
+// onStageStart is triggered before each stage starts.
 // It receives the same options as onRoundStart, and the stage that is starting.
 Empirica.onStageStart((game, round, stage, players) => {});
 
@@ -27,15 +27,15 @@ Empirica.onRoundEnd((game, round, players) => {
   });
 });
 
-// onRoundEnd is triggered when the game ends.
+// onGameEnd is triggered when the game ends.
 // It receives the same options as onGameStart.
 Empirica.onGameEnd((game, players) => {});
 
 // ===========================================================================
-// => onSet, onAppend and onChanged ==========================================
+// => onSet, onAppend and onChange ==========================================
 // ===========================================================================
 
-// onSet, onAppend and onChanged are called on every single update made by all
+// onSet, onAppend and onChange are called on every single update made by all
 // players in each game, so they can rapidly become quite expensive and have
 // the potential to slow down the app. Use wisely.
 //
@@ -70,7 +70,7 @@ Empirica.onGameEnd((game, players) => {});
 //   // }
 // });
 
-// // onSet is called when the experiment code call the `.append()` method
+// // onAppend is called when the experiment code call the `.append()` method
 // // on games, rounds, stages, players, playerRounds or playerStages.
 // Empirica.onAppend((
 //   game,
@@ -107,4 +107,5 @@ Empirica.onGameEnd((game, players) => {});
 //   // `onChange` is useful to run server-side logic for any user interaction.
 //   // Note the extra isAppend boolean that will allow to differenciate sets and
 //   // appends.
+//    Game.set("lastChangeAt", new Date().toString())
 // });

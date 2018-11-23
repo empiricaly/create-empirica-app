@@ -7,7 +7,7 @@ import Empirica from "meteor/empirica:core";
 //   // onStageStart(bot, game, round, stage, players) {},
 
 //   // Called during each stage at tick interval (~1s at the moment)
-//   onStageTick(bot, game, round, stage, players, secondsRemaining) {}
+//   onStageTick(bot, game, round, stage, secondsRemaining) {}
 
 //   // // NOT SUPPORTED A player has changed a value
 //   // // This might happen a lot!
