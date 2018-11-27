@@ -109,3 +109,12 @@ Empirica.onGameEnd((game, players) => {});
 //   // appends.
 //    Game.set("lastChangeAt", new Date().toString())
 // });
+
+// // onSubmit is called when the player submits a stage.
+// Empirica.onSubmit((
+//   game,
+//   round,
+//   stage,
+//   player // Player who submitted
+// ) => {
+// });
