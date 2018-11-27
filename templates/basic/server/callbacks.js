@@ -56,7 +56,6 @@ Empirica.onGameEnd((game, players) => {});
 //   game,
 //   round,
 //   stage,
-//   players,
 //   player, // Player who made the change
 //   target, // Object on which the change was made (eg. player.set() => player)
 //   targetType, // Type of object on which the change was made (eg. player.set() => "player")
@@ -76,7 +75,6 @@ Empirica.onGameEnd((game, players) => {});
 //   game,
 //   round,
 //   stage,
-//   players,
 //   player, // Player who made the change
 //   target, // Object on which the change was made (eg. player.set() => player)
 //   targetType, // Type of object on which the change was made (eg. player.set() => "player")
@@ -95,7 +93,6 @@ Empirica.onGameEnd((game, players) => {});
 //   game,
 //   round,
 //   stage,
-//   players,
 //   player, // Player who made the change
 //   target, // Object on which the change was made (eg. player.set() => player)
 //   targetType, // Type of object on which the change was made (eg. player.set() => "player")
