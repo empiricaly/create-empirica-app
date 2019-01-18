@@ -35,9 +35,7 @@ export default class SocialExposure extends React.Component {
         <p>
           <strong>There are {otherPlayers.length} other players:</strong>
         </p>
-        {!_.isEmpty(otherPlayers)
-          ? otherPlayers.map(p => this.renderSocialInteraction(p))
-          : ""}
+        {otherPlayers.map(p => this.renderSocialInteraction(p))}
       </div>
     );
   }
