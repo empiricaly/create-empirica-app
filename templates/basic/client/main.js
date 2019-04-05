@@ -1,14 +1,16 @@
-import { render } from "react-dom";
-
 import Empirica from "meteor/empirica:core";
-
+import { render } from "react-dom";
+import ExitSurvey from "./exit/ExitSurvey";
+import Thanks from "./exit/Thanks";
+import About from "./game/About";
 import Round from "./game/Round";
 import Consent from "./intro/Consent";
 import InstructionStepOne from "./intro/InstructionStepOne";
 import InstructionStepTwo from "./intro/InstructionStepTwo";
 import Quiz from "./intro/Quiz";
-import ExitSurvey from "./exit/ExitSurvey";
-import Thanks from "./exit/Thanks";
+
+// Set the About Component you want to use for the About dialog (optional).
+Empirica.about(About);
 
 // Set the Consent Component you want to present players (optional).
 Empirica.consent(Consent);

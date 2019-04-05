@@ -1,7 +1,6 @@
 import Empirica from "meteor/empirica:core";
-
-import "./callbacks.js";
 import "./bots.js";
+import "./callbacks.js";
 
 // gameInit is where the structure of a game is defined.
 // Just before every game starts, once all the players needed are ready, this
@@ -10,8 +9,8 @@ import "./bots.js";
 // and the players. You can also get/set initial values on your game, players,
 // rounds and stages (with get/set methods), that will be able to use later in
 // the game.
-Empirica.gameInit((game, treatment, players) => {
-  players.forEach((player, i) => {
+Empirica.gameInit(game => {
+  game.players.forEach((player, i) => {
     player.set("avatar", `/avatars/jdenticon/${player._id}`);
     player.set("score", 0);
   });
