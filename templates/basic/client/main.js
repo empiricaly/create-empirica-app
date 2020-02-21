@@ -15,9 +15,9 @@ Empirica.about(About);
 // Set the Consent Component you want to present players (optional).
 Empirica.consent(Consent);
 
-// Introduction pages to show before they play the game (optional).
-// At this point they have been assigned a treatment. You can return
-// different instruction steps depending on the assigned treatment.
+// introSteps are pages to show before playing the game (optional).
+// At this point the player has been assigned a game and treatment. You can
+// return different instruction steps depending on the assigned treatment.
 Empirica.introSteps((game, treatment) => {
   const steps = [InstructionStepOne];
   if (treatment.playerCount > 1) {
@@ -43,6 +43,21 @@ Empirica.round(Round);
 Empirica.exitSteps((game, player) => {
   return [ExitSurvey, Thanks];
 });
+
+// ====================
+// ADVANCED CONFIGURATION
+//
+// Everything beyond this point are advanced options to change only
+// with full understanding of how things work.
+// ====================
+
+// // preAssignmentIntroSteps are pages to show before assignment happens (optional).
+// // At this point the player has NOT YET been assigned a game and treatment. This
+// // is a good time to collect data that will inform custom assignment (done on
+// // the server in the `onAssign` callback).
+// Empirica.preAssignmentIntroSteps((player) => {
+//   return [];
+// });
 
 // Start the app render tree.
 // NB: This must be called after any other Empirica calls (Empirica.round(),

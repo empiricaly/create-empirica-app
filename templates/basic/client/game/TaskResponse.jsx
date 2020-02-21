@@ -5,6 +5,7 @@ export default class TaskResponse extends React.Component {
   handleChange = num => {
     const { player } = this.props;
     const value = Math.round(num * 100) / 100;
+    player.log("value", value);
     player.round.set("value", value);
   };
 

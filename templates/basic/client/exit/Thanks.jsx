@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Centered } from "meteor/empirica:core";
-
 export default class Thanks extends React.Component {
   static stepName = "Thanks";
   render() {
