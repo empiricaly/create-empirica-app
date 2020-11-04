@@ -30,7 +30,7 @@ ecmascript-runtime-client@0.10.0
 ecmascript-runtime-server@0.9.0
 ejson@1.1.1
 email@1.2.3
-empirica:core@1.9.0
+empirica:core@1.10.0
 empirica:slider@0.0.3
 es5-shim@4.8.0
 fetch@0.1.1
