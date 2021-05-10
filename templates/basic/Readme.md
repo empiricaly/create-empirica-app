@@ -94,6 +94,8 @@ callbacks, such as `onRoundEnd`, offer powerful ways to add logic to a game in a
 central point (the server), which is often preferable to adding all the logic on
 the client.
 
+Finally, the /server/bots.js file is where you can add bot definitions to your app.
+
 ## Public
 
 The `/public` is here to host any static assets you might need in the game, such
