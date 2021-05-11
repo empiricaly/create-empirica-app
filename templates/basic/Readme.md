@@ -2,9 +2,9 @@
 
 _This project was generated with [create-empirica-app](https://github.com/empiricaly/create-empirica-app)._
 
-*Add a description of your study*
+*Add a description of your Empirica app*
 
-# Testing this App Locally
+# Running this App Locally
 
 ## General  Setup
 If you haven't already:
@@ -14,14 +14,13 @@ If you haven't already:
 
 ## Preparing this app
 
-Clone this repository to a local repository on your device.
-In the command line run this to install all the Node packages:
+If you have just downloaded, pulled, or cloned this app, you should run this in the command line to install all the Node packages:
 
 ```
 meteor npm install
 ```
 
-## Running the app locally
+## Launching the app
 
 You can now run the app on your local machine with:
 
@@ -53,8 +52,8 @@ To run a game create a new `batch` with the games of treatments you want to use 
 Open a player tab by going to [https:/localhost:3000/](https:/localhost:3000/) or clicking on **open app**.
 
 The player that you open with [https:/localhost:3000/](https:/localhost:3000/) is cached on your browser. Whenever you start a game with this player, your local app will keep that information. To play again there are multiple things you can do:
-- Click on the **Reset current session** button on header of a tab with your player to reset this player, and create a new game for this player to join.
-- Click on the **New Player** button on header of a tab with your player to open a new tab with a different player (you will see tab with an id).
+- Click on the **Reset current session** button on the header of a tab with your player to reset this player, and create a new game for this player to join.
+- Click on the **New Player** button on the header of a tab with your player to open a new tab with a different player (you will see the id of that player in the title of the tab).
 - Go to the **Players** tab in the admin panel and retire players that have finished or cancelled.
 
 **The app will hot reload as you save changes to your code.**
