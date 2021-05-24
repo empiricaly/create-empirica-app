@@ -2,6 +2,7 @@ import Empirica from "meteor/empirica:core";
 import { render } from "react-dom";
 import ExitSurvey from "./exit/ExitSurvey";
 import Thanks from "./exit/Thanks";
+import Sorry from "./exit/Sorry";
 import About from "./game/About";
 import Round from "./game/Round";
 import Consent from "./intro/Consent";
