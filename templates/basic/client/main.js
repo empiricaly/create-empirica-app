@@ -2,18 +2,23 @@ import Empirica from "meteor/empirica:core";
 import { render } from "react-dom";
 import ExitSurvey from "./exit/ExitSurvey";
 import Thanks from "./exit/Thanks";
+import Sorry from "./exit/Sorry";
 import About from "./game/About";
 import Round from "./game/Round";
 import Consent from "./intro/Consent";
 import InstructionStepOne from "./intro/InstructionStepOne";
 import InstructionStepTwo from "./intro/InstructionStepTwo";
 import Quiz from "./intro/Quiz";
+import NewPlayer from "./intro/NewPlayer";
 
 // Set the About Component you want to use for the About dialog (optional).
 Empirica.about(About);
 
 // Set the Consent Component you want to present players (optional).
 Empirica.consent(Consent);
+
+// Set the component for getting the player id (optional)
+Empirica.newPlayer(NewPlayer);
 
 // Introduction pages to show before they play the game (optional).
 // At this point they have been assigned a treatment. You can return
@@ -41,6 +46,14 @@ Empirica.round(Round);
 // If you don't return anything, or do not define this function, a default
 // exit screen will be shown.
 Empirica.exitSteps((game, player) => {
+  if (
+    !game ||
+    (player.exitStatus &&
+      player.exitStatus !== "finished" &&
+      player.exitReason !== "playerQuit")
+  ) {
+    return [Sorry];
+  }
   return [ExitSurvey, Thanks];
 });
 
